@@ -39,7 +39,7 @@ depok = depok[depok.tanggal.dt.year.eq(2021)]
 
 
 source = ColumnDataSource(data={
-    'x'       : bandung['tanggal'].dt.month,
+    'x'       : bandung['tanggal'],
     'bandung'       : bandung['confirmation'],
     'bogor'       : bogor['confirmation'],
     'depok'       : depok['confirmation'],
@@ -49,7 +49,7 @@ source = ColumnDataSource(data={
 # In[80]:
 
 
-plot = figure(title="Covid-19 data visualization in Kota Bandung, Kota Bogor and Kota Depok", x_axis_label="Time", y_axis_label="confirmation")
+plot = figure(title="Covid-19 data visualization in Kota Bandung, Kota Bogor and Kota Depok", x_axis_label="Time", y_axis_label="confirmation", x_axis_type="datetime")
 
 line1 = plot.line(x='x', y='bandung', source=source, legend_label='Kota Bandung', color='blue', line_width=2)
 line2 = plot.line(x='x', y='bogor', source=source, legend_label='Kota Bogor', color='red', line_width=2)
@@ -63,7 +63,7 @@ def update_plot(attr, old, new):
     plot.yaxis.axis_label = y
 
     new_data = {
-    'x'       : bandung['tanggal'].dt.month,
+    'x'       : bandung['tanggal'],
     'bandung'       : bandung[y],
     'bogor'       : bogor[y],
     'depok'       : depok[y],
