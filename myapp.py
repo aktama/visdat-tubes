@@ -30,9 +30,9 @@ depok = df.loc[df['nama_kab']=='KOTA DEPOK'][['tanggal','nama_kab','confirmation
 bandung['tanggal'] = pd.to_datetime(bandung['tanggal'])
 bogor['tanggal'] = pd.to_datetime(bogor['tanggal'])
 depok['tanggal'] = pd.to_datetime(depok['tanggal'])
-bandung = bandung[bandung.tanggal.dt.year.eq(2020)]
-bogor = bogor[bogor.tanggal.dt.year.eq(2020)]
-depok = depok[depok.tanggal.dt.year.eq(2020)]
+bandung = bandung[bandung.tanggal.dt.year.eq(2021)]
+bogor = bogor[bogor.tanggal.dt.year.eq(2021)]
+depok = depok[depok.tanggal.dt.year.eq(2021)]
 
 
 # In[69]:
