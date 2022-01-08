@@ -49,7 +49,7 @@ source = ColumnDataSource(data={
 # In[80]:
 
 
-plot = figure(title="Covid-19 data visualization in Kota Bandung, Kota Bogor and Kota Depok", x_axis_label="Time", y_axis_label="confirmation", x_axis_type="datetime")
+plot = figure(title="Covid-19 data visualization in Kota Bandung, Kota Bogor and Kota Depok", x_axis_label="time", y_axis_label="confirmation", x_axis_type="datetime")
 
 line1 = plot.line(x='x', y='bandung', source=source, legend_label='Kota Bandung', color='blue', line_width=2)
 line2 = plot.line(x='x', y='bogor', source=source, legend_label='Kota Bogor', color='red', line_width=2)
