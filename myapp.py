@@ -49,7 +49,7 @@ source = ColumnDataSource(data={
 # In[80]:
 
 
-plot = figure(title="Simple line example", x_axis_label="x", y_axis_label="y")
+plot = figure(title="Covid-19 data visualization in Kota Bandung, Kota Bogor and Kota Depok", x_axis_label="Time", y_axis_label="confirmation")
 
 line1 = plot.line(x='x', y='bandung', source=source, legend_label='Kota Bandung', color='blue', line_width=2)
 line2 = plot.line(x='x', y='bogor', source=source, legend_label='Kota Bogor', color='red', line_width=2)
@@ -70,11 +70,11 @@ def update_plot(attr, old, new):
     }
     source.data = new_data
     
-    plot.title.text = 'Title lah pokoknya'
+    plot.title.text = 'Covid-19 data visualization in Kota Bandung, Kota Bogor and Kota Depok'
 
 y_select = Select(
     options=['confirmation','confirmation_selesai','confirmation_meninggal','pertumbuhan_confirmation','pertumbuhan_confirmation_selesai','pertumbuhan_confirmation_meninggal'],
-    value='confirmation_selesai',
+    value='confirmation',
     title='y-axis data'
 )
 
