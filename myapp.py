@@ -39,7 +39,7 @@ depok = depok[depok.tanggal.dt.year.eq(2021)]
 
 
 source = ColumnDataSource(data={
-    'x'       : bandung['tanggal'],
+    'x'       : bandung['tanggal'].dt.month,
     'bandung'       : bandung['confirmation'],
     'bogor'       : bogor['confirmation'],
     'depok'       : depok['confirmation'],
@@ -63,7 +63,7 @@ def update_plot(attr, old, new):
     plot.yaxis.axis_label = y
 
     new_data = {
-    'x'       : bandung['tanggal'],
+    'x'       : bandung['tanggal'].dt.month,
     'bandung'       : bandung[y],
     'bogor'       : bogor[y],
     'depok'       : depok[y],
